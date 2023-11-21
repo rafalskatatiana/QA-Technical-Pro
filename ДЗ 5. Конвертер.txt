@@ -1,0 +1,26 @@
+//switch при порівнянні використовує ===
+
+var value = 1000; // значення для конвертації
+var value1 = 1; //кг/м, година/хв, кг/гр
+switch (value) {
+ case 10000:
+  let c = 10 * 1000
+  console.log(c);
+  console.log('10 км це 10000 м');
+  break;
+ case 60:
+  let b = 1 * 60;
+  console.log(b);
+  console.log('1 г це 60хв');
+  break;
+ case 1000:
+  let d = 1 * 1000;
+  console.log(d);
+  console.log(' 1 кг. це 1000 грм');
+  break;
+
+ default:
+  console.log('Невідома величина');
+}
+
+
