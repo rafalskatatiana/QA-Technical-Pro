@@ -1,0 +1,29 @@
+// Перший варіант з for
+function drawTriangle(height, symbol) {
+ for (let a = 1; a <= height; a++) {
+  let row = "";
+  for (let b = 1; b <= a; b++) {
+   row += symbol;
+  }
+  console.log(row);
+ }
+}
+
+drawTriangle(5, '*');
+
+
+// Другий варіант  з do
+
+let i = 1;
+do {
+ let row = "";
+ let j = 1;
+ do {
+  row += "*";
+  j++;
+ } while (j <= i);
+
+ console.log(row);
+ i += 1;
+} while (i <= 5);
+
