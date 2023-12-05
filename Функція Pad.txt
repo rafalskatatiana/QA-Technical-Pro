@@ -1,0 +1,16 @@
+function pad(str, char, count, addToStart) {
+    const currentLength = str.length;
+
+    if (currentLength >= count) {
+        return str;
+    }
+
+    const paddingLength = count - currentLength;
+    const padding = char.repeat(paddingLength > 0 ? 1 : 0);
+
+    return addToStart ? padding + str : str + padding;
+}
+
+console.log(pad('qwerty', '+', 10, true));  
+console.log(pad('qwerty', '+', 7, false)); 
+console.log(pad('qwerty', '+', 6, false)); 

@@ -1,0 +1,11 @@
+function testisNaN(value) {
+    return typeof  value !== value;
+}
+
+console.log(testisNaN(NaN));
+console.log(testisNaN(5));
+console.log(testisNaN("555"));
+console.log(testisNaN("string"));
+console.log(testisNaN(null));
+console.log(testisNaN(123));
+console.log(testisNaN(undefined));

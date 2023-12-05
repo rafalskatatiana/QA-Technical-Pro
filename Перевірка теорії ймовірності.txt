@@ -1,0 +1,27 @@
+function checkProbabilityTheory(count) {
+    let evenCount = 0;
+    let oddCount = 0;
+
+    // Генеруємо випадкові числа та рахуємо кількість парних та непарних
+    for (let a = 0; a < count; a++) {
+        const randomNum = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
+
+        if (randomNum % 2 === 0) {
+            evenCount++;
+        } else {
+            oddCount++;
+        }
+    }
+
+    // Обчислюємо відсоткове співвідношення
+    const evenPercentage = (evenCount / count) * 100;
+
+    // Виводимо результати
+    console.log('Кількість згенерованих чисел: ' + count);
+    console.log('Кількість парних чисел: ' + evenCount);
+    console.log('Кількість непарних чисел: ' + oddCount);
+    console.log('Відсоток парних до непарних: ' + evenPercentage + '% ' + evenPercentage + '%');
+}
+
+// Виклик функції з параметром count = 1000
+checkProbabilityTheory(25);
