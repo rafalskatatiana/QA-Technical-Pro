@@ -1,0 +1,27 @@
+
+var shop = {
+ name: 'Market',
+ product: 'toys',
+ type: 'for kids',
+ address: {
+  city: 'Dnipro',
+  street: 'K.Marks',
+  building: 20
+ },
+ getName: function () {
+  return 'Shop Information:\nName: ' + this.name + '\nProduct: ' + this.product + '\nType: ' + this.type;
+ },
+ addressInfo: function () {
+  return 'Address: ' + this.address.city + ', ' + this.address.street + ', ' + this.address.building;
+ }
+};
+
+console.log(shop.getName());
+console.log(shop.addressInfo());
+
+shop['Район'] = 'Micro';
+shop.getInfo = function () {
+ return this.getName() + '\n' + this.addressInfo() + '\nРайон: ' + this['Район'];
+};
+console.log('-----After------')
+console.log(shop.getInfo());

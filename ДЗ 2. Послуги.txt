@@ -1,0 +1,36 @@
+var services = {
+ "стрижка": "60 грн",
+ "гоління": "80 грн",
+ "Миття голови": "100 грн"
+};
+
+// Добавляем новую услугу
+services['Розбити скло'] = "200 грн";
+
+// Объявляем и инизиализируем переменные
+var total = 0;
+var minKey = null;
+var maxKey = null;
+
+// Перебираем услуги и суммируем,преобразуем строку в число с помощью унарного плюса и удаляем " грн"
+for (var key in services) {
+
+ var currentNumber = +services[key].replace(" грн", "");
+ total += currentNumber;
+
+ // Находим минимальное значение ключа
+ if (minKey === null || currentNumber < services[minKey].replace(" грн", "")) {
+  minKey = key;
+ }
+ 
+//Находим максимальное значение ключа
+if (maxKey === null || currentNumber > services[maxKey].replace(" грн", "")) {
+  maxKey = key;
+ }
+
+}
+
+// Выводим общую сумму и минимальную стоимость услуги
+console.log("Загальна вартість послуг: " + total + " грн");
+console.log("Мінімальна вартість послуги (" + minKey + "): " + +services[minKey].replace(" грн", "") + " грн");
+console.log("Максимальна вартість послуги (" + maxKey + "): " + +services[maxKey].replace(" грн", "") + " грн");
