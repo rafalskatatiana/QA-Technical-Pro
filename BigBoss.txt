@@ -1,0 +1,18 @@
+function findValueByKey(companyName, currentCompany = company) {
+    if (currentCompany.name === companyName) {
+        return currentCompany;
+    }
+
+    if (currentCompany.clients) {
+        for (const client in currentCompany.clients) {
+            const result = findValueByKey(companyName, currentCompany.clients[client]);
+            if (result !== null) {
+                return result;
+            }
+        }
+    }
+
+    return null;
+}
+console.log(findValueByKey('Клієнт 1'));
+console.log(findValueByKey('Клієнт 2'));
